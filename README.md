@@ -22,4 +22,4 @@ Good luck and have fun!
 
 **Github Pages Link**
 
-https://github.com/TheSpanishfly/se_project_aroundtheus
+https://thespanishfly.github.io/se_project_aroundtheus/
