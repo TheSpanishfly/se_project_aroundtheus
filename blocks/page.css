@@ -19,9 +19,10 @@
   padding-right: 20px;
 }
 
-@media screen and (max-width: 568px) {
-  .page__content {
-    padding-left: 0;
-    padding-right: 0;
+@media screen and (max-width: 767px) {
+  .page__section {
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
