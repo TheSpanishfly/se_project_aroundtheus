@@ -1,5 +1,13 @@
 # Project 3: Around The U.S.
 
+Project created to showcase a responsive wbesite with screen sizes for desktop, tablet, and phone screens.
+
+Tools and Technology used:
+Figma
+tinypng.com
+Winzip
+Visual Studio Code
+
 ### Overview
 
 - Intro
