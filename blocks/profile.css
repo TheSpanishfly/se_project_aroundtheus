@@ -21,8 +21,8 @@
   grid-area: button;
   border: 1px solid #ffffff;
   margin-left: 18px;
+  margin-top: 15px;
   display: flex;
-  align-self: center;
 }
 
 .profile__edit-button:hover {
@@ -108,7 +108,7 @@
   }
 }
 
-@media screen and (max-width: 675px) {
+@media screen and (max-width: 650px) {
   .profile {
     flex-direction: column;
     justify-content: center;
