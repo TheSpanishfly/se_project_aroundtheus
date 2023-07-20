@@ -35,4 +35,9 @@
   .page__section {
     max-width: 880px;
   }
+
+  .page__content {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
