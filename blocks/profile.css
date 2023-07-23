@@ -15,6 +15,7 @@
   grid-template-columns: minmax(auto, 373px) auto;
   grid-gap: 9px 17px;
   align-items: center;
+  padding-left: 30px;
 }
 
 .profile__edit-button {
@@ -27,11 +28,6 @@
   box-sizing: border-box;
 }
 
-.profile__edit-button:hover {
-  opacity: 0.6;
-  cursor: pointer;
-}
-
 .profile__add-button {
   background: transparent url(../images/add.svg) center no-repeat;
   height: 50px;
@@ -40,11 +36,7 @@
   border: 2px solid #ffffff;
   border-radius: 2px;
   box-sizing: border-box;
-}
-
-.profile__add-button:hover {
-  opacity: 0.6;
-  cursor: pointer;
+  padding-left: 165px;
 }
 
 .profile__title {
@@ -78,7 +70,6 @@
   border-radius: 50%;
   object-fit: cover;
   background-position: center;
-  margin-right: 24px;
 }
 
 @media screen and (max-width: 480px) {
@@ -106,7 +97,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 420px) {
   .profile__title {
     font-size: 22px;
     font-family: "Inter", sans-serif;
