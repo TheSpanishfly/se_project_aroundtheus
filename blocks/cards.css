@@ -12,5 +12,6 @@
   .cards__list {
     margin-top: 36px;
     grid-gap: 20px 19px;
+    margin-bottom: 0;
   }
 }
