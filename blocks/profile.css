@@ -4,9 +4,6 @@
   justify-content: center;
   padding-top: 40px;
   margin-bottom: 47.25px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 .profile__info {
@@ -100,36 +97,26 @@
 @media screen and (max-width: 420px) {
   .profile__title {
     font-size: 22px;
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
     line-height: 26.63px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
     max-width: 196px;
-    max-height: 22px;
-    margin-left: 0;
-    margin-right: 0;
   }
   .profile__image {
     margin-bottom: 26.25px;
   }
   .profile__description {
-    color: #fff;
     text-align: center;
-    font-family: Inter;
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
     line-height: normal;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
     max-width: 282px;
   }
 
   .profile__edit-button {
     max-width: 18px;
     max-height: 18px;
+  }
+
+  .profile__info {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
