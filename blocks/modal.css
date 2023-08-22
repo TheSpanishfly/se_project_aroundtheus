@@ -11,6 +11,7 @@
   justify-content: center;
   padding-left: 200px;
   padding-right: 200px;
+  visibility: hidden;
 }
 
 .modal__container {
@@ -38,6 +39,7 @@
 
 .modal__opened {
   display: flex;
+  visibility: visible;
 }
 
 .modal__heading {
