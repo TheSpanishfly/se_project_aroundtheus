@@ -40,7 +40,7 @@
   opacity: 0.6;
 }
 
-.modal__opened {
+.modal_opened {
   display: flex;
 }
 
