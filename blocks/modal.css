@@ -7,15 +7,17 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
   display: flex;
-  visibility: hidden;
+  visibility: none;
   opacity: 0;
-  transition: opacity 0.2s linear;
+  transition: visibility 0s 0.5s, opacity 0.5s linear;
+  pointer-events: none;
 }
 
 .modal_opened {
   visibility: visible;
   opacity: 1;
   pointer-events: all;
+  transition: visibolity 0s, opacity o.5s linear;
 }
 
 .modal__container {
