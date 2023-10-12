@@ -84,7 +84,7 @@
   margin-bottom: 0px;
 }
 
-.modal__input-form__title {
+.modal__input-form__item-title {
   border-bottom-color: #000;
   border-bottom-width: 1px;
   border-top: none;
@@ -95,7 +95,7 @@
   margin-bottom: 29.74px;
 }
 
-.modal__input-form__title:last-of-type {
+.modal__input-form__item-title:last-of-type {
   margin-bottom: 0px;
 }
 
