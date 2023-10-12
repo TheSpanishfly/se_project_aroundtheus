@@ -1,5 +1,4 @@
 .page {
-  font-family: Inter, Arial, Helvetica, sans-serif;
   background-color: black;
   color: white;
 }
@@ -19,9 +18,7 @@
 
 @media screen and (max-width: 1100px) {
   .page__section {
-    margin: 0px 20px;
-    max-width: 100%;
+    margin: 0 20px;
     max-width: calc(100% - 40px);
-    overflow: wrap;
   }
 }

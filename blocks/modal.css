@@ -1,186 +1,205 @@
 .modal {
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  visibility: hidden;
   display: flex;
-  visibility: none;
   opacity: 0;
-  transition: visibility 0s 0.5s, opacity 0.5s linear;
-  pointer-events: none;
+  transition: visibility 0s 0.6s, opacity 0.6s;
 }
 
 .modal_opened {
   visibility: visible;
   opacity: 1;
-  pointer-events: all;
-  transition: visibolity 0s, opacity o.5s linear;
+  transition: visibility 0s, opacity 0.6s;
 }
 
 .modal__container {
-  width: 430px;
-  background-color: #fff;
+  margin: auto;
+  padding: 36px;
   border-radius: 10px;
-  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 999;
-  margin: 0;
-  transform: translate(-50%, -50%);
+  background: white;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  width: 430px;
+  height: 330px;
+  position: relative;
+  display: grid;
 }
 
-.modal__title {
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 24px;
-  font-weight: 900;
-  line-height: 29px;
-  color: #000;
-  margin: 34px 64px 0px 36px;
+.modal__image-container {
+  background: transparent;
+  width: 433px;
+  height: 540px;
 }
 
 .modal__close {
-  height: 40px;
-  width: 40px;
-  position: absolute;
-  bottom: calc(100% + 5px);
-  left: calc(100% + 5px);
   background-image: url(../images/Close\ Icon.svg);
-  border: none;
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
+  position: absolute;
+  border: none;
+  bottom: calc(100% + 5px);
+  left: calc(100% + 5px);
+  width: 40px;
+  height: 40px;
 }
 
 .modal__close:hover {
   opacity: 0.5;
+  transition: opacity 1s ease;
 }
 
-.modal__form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 54px 36px 36.51px;
+.modal__image-close {
+  left: 475px;
+  top: -7px;
 }
 
-.modal__input {
-  width: 100%;
+.modal__heading {
+  color: black;
   font-family: "Inter", Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17px;
-  text-align: left;
-  margin-bottom: 30px;
-  padding-bottom: 13px;
-  background-color: transparent;
-  border: none;
-  border-bottom-style: solid;
-  border-color: rgba(0, 0, 0, 0.2);
-  border-width: 1px;
-  border-radius: 1px;
-  color: #000000;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  width: 330px;
+  height: 23px;
 }
 
-.modal__input::placeholder {
-  color: #c4c4c4;
-}
-
-.modal__save-button {
+.modal__input_form_item {
+  border-bottom-color: #000;
+  border-bottom-width: 1px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   width: 100%;
-  height: 50px;
-  margin-top: 16px;
-  border-radius: 2px;
-  background: #000;
+  height: 27.26px;
+  margin-bottom: 29.74px;
+}
+
+.modal__input_form_item:last-of-type {
+  margin-bottom: 0px;
+}
+
+.modal__input_form_item_title {
+  border-bottom-color: #000;
+  border-bottom-width: 1px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  height: 27.26px;
+  margin-bottom: 29.74px;
+}
+
+.modal__input_form_item_title:last-of-type {
+  margin-bottom: 0px;
+}
+
+.modal__button {
+  background-color: #000;
   color: #fff;
-  text-align: center;
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  border: none;
+  border-radius: 2px;
+  width: 100%;
+  height: 50.15px;
+  padding: 0;
+  margin-top: 48px;
 }
 
-.modal__save-button:hover {
-  opacity: 0.8;
+.modal__button:hover {
+  visibility: visible;
+  opacity: 0.5;
+  transition: opacity 1s ease;
   cursor: pointer;
-  transition: linear 0.1s;
 }
 
-.modal__container-preview {
-  margin: auto;
+.modal__button_disabled {
+  opacity: 0.2;
+}
+
+.preview-image-card {
+  width: 433px;
+  height: 540px;
   position: relative;
 }
 
-.modal__preview-image {
-  max-width: 75vw;
-  max-height: 75vh;
-}
-
-.modal__preview-title {
+.preview-image-title {
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400px;
+  font-size: 12px;
+  line-height: 14.52px;
   width: 291px;
   height: 12px;
-  flex-shrink: 0;
-  color: #fff;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0;
-  bottom: -22px;
-  position: absolute;
 }
 
-@media screen and (max-width: 768px) {
+.modal__error {
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.52px;
+  color: #ff0000;
+}
+
+.modal__input_type_error {
+  border-bottom-color: #ff0000;
+  border-bottom-width: 1px;
+}
+
+@media screen and (max-width: 630px) {
   .modal__container {
-    max-width: 282px;
-    box-sizing: border-box;
+    width: 282px;
+    height: 322px;
+    padding: 0px 19px;
   }
 
-  .modal__title {
-    font-size: 18px;
-    line-height: 22px;
-    margin-bottom: 75px;
-    margin: 25px 22px 0 22px;
-    align-content: left;
+  .modal_profile-edit {
+    width: 282px;
+    height: 322px;
+    top: 123px;
+    left: 22px;
   }
 
-  .modal__form {
-    margin: 76px 22px 25px 22px;
-  }
-
-  .modal__input {
-    width: 238px;
-    padding-bottom: 13px;
-    gap: 30px;
-  }
-
-  .modal__input::placeholder {
-    font-size: 14px;
-    line-height: 17px;
-  }
-
-  .modal__button {
-    line-height: 17px;
-    font-size: 14px;
-    margin-top: 15px;
-    width: 238px;
-    height: 46px;
-    margin-bottom: 0;
-  }
-
-  .modal__save-button {
-    width: 238px;
+  .modal_add-card {
+    width: 282px;
+    height: 322px;
+    top: 123px;
+    left: 22px;
   }
 
   .modal__close {
-    left: calc(100% - 25px);
-    margin-bottom: 14px;
     width: 26px;
     height: 26px;
+    bottom: calc(100% + 13px);
+    left: 248px;
+  }
+
+  .modal__heading {
+    width: 238px;
+  }
+
+  .modal__form {
+    width: 238px;
+  }
+
+  .modal__input_form_item {
+    width: 238px;
+  }
+
+  .modal__button {
+    width: 238px;
+    height: 46px;
+  }
+
+  .preview-image-card {
+    width: 240px;
+    height: 299px;
+  }
+
+  .preview-image-title {
+    width: 240px;
+    height: 12px;
   }
 }
