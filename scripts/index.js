@@ -65,13 +65,25 @@ function closePopup(modal) {
   modal.addEventListener("keydown", () => closePopup(modal));
 }
 
+// Function to handle the Esc key
+function closePopupByEscape(evt, modal) {
+  if (evt.key === "Escape") {
+    closePopup(modal);
+  }
+}
+
 function openPopup(modal) {
   modal.classList.add("modal_opened");
-  document.addEventListener("keydown", (evt) => {
-    if (evt.key === "Escape") {
-      closePopup(modal);
-    }
-  });
+
+  // Add the event listener by reference
+  document.addEventListener("keydown", closePopupByEscape.bind(null, modal));
+}
+
+function closePopup(modal) {
+  modal.classList.remove("modal_opened");
+
+  // Remove the event listener
+  document.removeEventListener("keydown", closePopupByEscape.bind(null, modal));
 }
 
 function renderCard(cardData, wrapper) {
@@ -102,10 +114,6 @@ function getCardElement(cardData) {
     openPopup(previewImageModal);
   });
 
-  previewImageCloseModal.addEventListener("click", () =>
-    closePopup(previewImageModal)
-  );
-
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
   });
@@ -119,6 +127,10 @@ function getCardElement(cardData) {
   //return the ready HTML element with the filled-in data
   return cardElement;
 }
+
+previewImageCloseModal.addEventListener("click", () =>
+  closePopup(previewImageModal)
+);
 
 function handleProfileEditSubmit(evt) {
   evt.preventDefault();
