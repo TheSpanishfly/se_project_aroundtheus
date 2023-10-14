@@ -66,24 +66,29 @@ function closePopup(modal) {
 }
 
 // Function to handle the Esc key
-function closePopupByEscape(evt, modal) {
-  if (evt.key === "Escape") {
-    closePopup(modal);
+function closePopupByEscape(event) {
+  if (event.key === "Escape") {
+    // Search for an opened modal
+    const openedModal = document.querySelector(".modal_opened");
+
+    // Close it if found
+    if (openedModal) {
+      closePopup(openedModal);
+    }
   }
 }
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
-
   // Add the event listener by reference
-  document.addEventListener("keydown", closePopupByEscape.bind(null, modal));
+  document.addEventListener("keydown", closePopupByEscape);
 }
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
 
   // Remove the event listener
-  document.removeEventListener("keydown", closePopupByEscape.bind(null, modal));
+  document.removeEventListener("keydown", closePopupByEscape);
 }
 
 function renderCard(cardData, wrapper) {
