@@ -1,3 +1,5 @@
+import Card from "../components/card.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -25,40 +27,39 @@ const initialCards = [
   },
 ];
 
-console.log(initialCards);
+//--------------------GENERIC ELEMENTS-------------------->>
+
+const cardTemplate =
+  document.querySelector("#card-template").content.firstElementChild;
+const cardListEl = document.querySelector(".cards__list");
+const previewModal = document.querySelector("#card-preview-modal");
+const previewModalClose = previewModal.querySelector(
+  "#card-preview-modal-close"
+);
+
+//--------------------PROFILE EDIT MODAL ELEMENTS-------------------->>
 
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
-const profileCloseModal = profileEditModal.querySelector(
-  "#profile-close-modal"
-);
-
-const profileTitle = document.querySelector(".profile__title");
-const profileDescription = document.querySelector(".profile__description");
+const profileEditModalClose = document.querySelector("#profile-close-modal");
+const profileEditForm = document.querySelector("#profile-edit-form");
+const profileTitle = document.querySelector("#profile-title");
+const profileDescription = document.querySelector("#profile__description");
 const profileTitleForm = document.querySelector("#profile-title-form");
 const profileDescriptionForm = document.querySelector(
   "#profile-description-form"
 );
 
-const addNewCardButton = document.querySelector(".profile__add-button");
+//--------------------PROFILE ADD MODAL ELEMENTS-------------------->>
+
+const addNewCardButton = document.querySelector("#profile__add-button");
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardCloseModal = addCardModal.querySelector("#add-card-close-modal");
-const addCardForm = addCardModal.querySelector(".modal__form");
-
-const profileEditForm = profileEditModal.querySelector(".modal__form");
-const cardListEl = document.querySelector(".cards__list");
-const cardTemplate =
-  document.querySelector("#card-template").content.firstElementChild;
-
+const cardAddForm = addCardModal.querySelector("#modal__form");
 const cardTitleForm = addCardForm.querySelector("#add-card-title-form");
-const cardLinkForm = addCardForm.querySelector("#add-card-link-form");
+const cardLinkForm = AddcardForm.querySelector("#add-card-link-form");
 
-const previewImageModal = document.querySelector("#preview-image-modal");
-const previewImageCloseModal = document.querySelector(
-  "#preview-image-close-modal"
-);
-const previewImageEl = previewImageModal.querySelector(".preview-image-card");
-const previewTitleEl = previewImageModal.querySelector(".preview-image-title");
+//--------------------FUNCTIONS-------------------->>
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
