@@ -1,73 +1,18 @@
-.card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  list-style-type: none;
-}
-
-.card__image {
-  width: 282px;
-  height: 282px;
-  border-radius: 10px 10px 0px 0px;
-  cursor: pointer;
-}
-
-.card__description {
-  display: flex;
-  background-color: white;
-  color: black;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 0 0 10px 10px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.card__title {
-  font-family: "Inter", Arial, sans-serif;
+.cards {
+  color: #000;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-style: normal;
   font-weight: 900;
-  font-size: 25px;
-  line-height: 29px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  line-height: normal;
+}
+
+.cards__list {
   margin: 0;
-  max-width: 190px;
-}
-
-.card__like-button {
-  background: transparent url(../images/heart.svg) center no-repeat;
-  width: 21px;
-  height: 18px;
-  margin-left: 28px;
-  border: none;
+  display: grid;
+  list-style-type: none;
   padding: 0;
-}
-
-.card__like-button_active {
-  background-image: url(../images/heart-active.svg);
-}
-
-.card__like-button:hover {
-  opacity: 0.5;
-  transition: opacity 1s ease;
-  cursor: pointer;
-}
-
-.card__delete-button {
-  background: transparent url(../images/trash.svg) center no-repeat;
-  width: 18px;
-  height: 19.3px;
-  position: relative;
-  left: 250px;
-  bottom: 350px;
-  border: none;
-}
-
-.card__delete-button:hover {
-  opacity: 0.6;
-  transition: opacity 1s ease;
-  cursor: pointer;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 282px);
+  grid-gap: 20px 17px;
+  margin-top: 47.25px;
 }
