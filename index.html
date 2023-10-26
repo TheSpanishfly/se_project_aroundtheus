@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Alex Perez" />
     <meta name="keywords" content="html, css, java" />
-    <link rel="stylesheet" href="pages/index.css" />
+    <link rel="stylesheet" href="./pages/index.css" />
     <title>Around the U.S.</title>
   </head>
-
   <body class="page">
     <div class="page__content">
       <header class="header page__section">
         <img
-          src="./images/logo.svg"
-          alt="Around the us logo"
-          class="header__logo"
+          src="images/logo.svg"
+          alt="Across the U.S. Logo"
+          class="header__image"
         />
       </header>
       <main class="content">
@@ -34,6 +33,7 @@
             ></button>
             <p class="profile__description" id="profile-description">
               Explorer
+              <!-- Prettier formats the description, adding indentation to the modal input field when it is not supposed to be so. -->
             </p>
           </div>
           <button
@@ -99,7 +99,7 @@
           type="button"
           id="profile-add-modal-close"
         ></button>
-        <h3 class="modal__heading">New Place</h3>
+        <h3 class="modal__heading">Add Place</h3>
         <form class="modal__form" id="card-add-form">
           <input
             class="modal__input"
@@ -141,7 +141,7 @@
           id="card-preview-modal-close"
         ></button>
         <img src="#" alt="#" class="modal__preview" id="card-preview-image" />
-        <h3 class="modal__preview-title"></h3>
+        <h3 id="card-preview-title" class="modal__preview-title"></h3>
       </div>
     </div>
 
