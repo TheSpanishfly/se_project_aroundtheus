@@ -33,9 +33,6 @@ const cardData = {
   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
 };
 
-const card = new Card(cardData, "#card-template");
-card.getView();
-
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
@@ -107,6 +104,7 @@ function handleAddCardFormSubmit(evt) {
   cardListEL.prepend(card);
   addCardForm.reset();
   closePopup(addCardModal);
+  addCardFormValidator.disableSubmitButton();
 }
 addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 
@@ -196,6 +194,6 @@ addCardFormValidator.enableValidation();
 
 const profileEditModalFormValidator = new FormValidator(
   profileEditModal,
-  config
+  profileEditForm
 );
 profileEditModalFormValidator.enableValidation();
