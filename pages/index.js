@@ -91,7 +91,10 @@ function openModal(modal) {
   modal.classList.add("modal_opened");
 }
 
-addNewCardButton.addEventListener("click", () => openModal(addCardModal));
+addNewCardButton.addEventListener("click", () => {
+  addCardFormValidator.toggleButtonState();
+  openModal(addCardModal);
+});
 
 function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
@@ -104,7 +107,7 @@ function handleAddCardFormSubmit(evt) {
   cardListEL.prepend(card);
   addCardForm.reset();
   closePopup(addCardModal);
-  addCardFormValidator.disableSubmitButton();
+  addCardFormValidator.toggleButtonState();
 }
 addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 
