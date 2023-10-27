@@ -1,5 +1,5 @@
 import Card from "../components/card.js";
-import FormValidation from "../components/FormValidator.js";
+import FormValidator from "../components/FormValidator.js";
 
 const initialCards = [
   {
@@ -191,10 +191,10 @@ const config = {
   errorClass: "modal__error_visible",
 };
 
-const addCardFormValidator = new FormValidation(addCardForm, config);
+const addCardFormValidator = new FormValidator(addCardForm, config);
 addCardFormValidator.enableValidation();
 
-const profileEditModalFormValidator = new FormValidation(
+const profileEditModalFormValidator = new FormValidator(
   profileEditModal,
   config
 );

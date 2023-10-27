@@ -4,6 +4,7 @@
   list-style: none;
   border-radius: 10px;
   position: relative;
+  cursor: pointer;
 }
 .card__image {
   width: 282px;
@@ -36,6 +37,7 @@
 }
 .card__like-button:hover {
   opacity: 50%;
+  cursor: pointer;
 }
 .card__title {
   max-width: 220px;
@@ -59,4 +61,5 @@
 }
 .card__delete-button:hover {
   opacity: 60%;
+  cursor: pointer;
 }
