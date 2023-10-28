@@ -1,4 +1,4 @@
-import Card from "../components/card.js";
+import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 
 const initialCards = [
@@ -197,6 +197,8 @@ addCardFormValidator.enableValidation();
 
 const profileEditModalFormValidator = new FormValidator(
   profileEditModal,
+  profileEditModalConfig,
   profileEditForm
 );
+
 profileEditModalFormValidator.enableValidation();
