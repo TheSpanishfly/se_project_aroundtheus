@@ -48,11 +48,6 @@
   white-space: nowrap;
   overflow: hidden;
 }
-
-.profile-title-input-error {
-  visibility: hidden;
-}
-
 .profile__description {
   font-size: 18px;
   line-height: 21.78px;

@@ -197,7 +197,7 @@ addCardFormValidator.enableValidation();
 
 const profileEditModalFormValidator = new FormValidator(
   profileEditModal,
-  profileEditModalConfig,
+  config,
   profileEditForm
 );
 

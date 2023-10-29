@@ -1,8 +1,8 @@
-export default class FormValidator {
+export default class FormValidation {
   constructor(formEl, options) {
     this._formEl = formEl;
     this._formSelector = options.formSelector;
-    this._inputSelector = options._inputSelector;
+    this._inputSelector = options.inputSelector;
     this._submitButtonSelector = options.submitButtonSelector;
     this._inactiveButtonClass = options.inactiveButtonClass;
     this._inputErrorClass = options.inputErrorClass;
@@ -62,3 +62,16 @@ export default class FormValidator {
     this._setEventListeners();
   }
 }
+
+// enabling validation by calling enableValidation()
+// pass all the settings on call
+//look for inputs inside of form
+//loop through all the inputs to see if all are valid
+//if input is not valid
+// get validation message
+//add error class to input
+//display error message
+// disable button
+//if all inputs are valid
+// enable button
+//reset error messages
