@@ -1,6 +1,8 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 
+console.log("Hello, World!");
+
 const initialCards = [
   {
     name: "Yosemite Valley",
