@@ -28,7 +28,16 @@ import {
   modalImage,
   modalText,
   config,
+  addCardForm,
 } from "../utils/constants.js";
+
+const addCardFormValidator = new FormValidator(addCardForm, config);
+addCardFormValidator.enableValidation();
+
+const profileEditModalFormValidator = new FormValidator(
+  profileEditForm,
+  config
+);
 
 function closePopup(popup) {
   document.removeEventListener("keydown", handleEscape);
