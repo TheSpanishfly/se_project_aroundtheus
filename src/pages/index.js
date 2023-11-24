@@ -29,6 +29,11 @@ import {
   modalText,
   config,
   addCardForm,
+  profileEditForm,
+  addNewCardButton,
+  cardListEL,
+  modal,
+  forEach,
 } from "../utils/constants.js";
 
 const addCardFormValidator = new FormValidator(addCardForm, config);
@@ -96,24 +101,5 @@ initialCards.forEach((cardData) => {
 });
 
 //combining close button and overlay listeners together
-
-modals.forEach((modal) => {
-  modal.addEventListener("mousedown", (evt) => {
-    if (evt.target.classList.contains("modal_opened")) {
-      closePopup(modal);
-    }
-    if (evt.target.classList.contains("modal__close")) {
-      closePopup(modal);
-    }
-  });
-});
-
-function handleEscape(evt) {
-  const key = evt.key;
-  if (key === "Escape") {
-    const openedModal = document.querySelector(".modal_opened");
-    closePopup(openedModal);
-  }
-}
 
 profileEditModalFormValidator.enableValidation();

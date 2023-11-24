@@ -43,30 +43,52 @@ export const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
 
-const addCardModal = document.querySelector("#add-card-modal");
-const addNewCardButton = document.querySelector(".profile__add-button");
-const addCardModalCloseButton = addCardModal.querySelector(".modal__close");
+export const addCardModal = document.querySelector("#add-card-modal");
+export const addNewCardButton = document.querySelector(".profile__add-button");
+export const addCardModalCloseButton =
+  addCardModal.querySelector(".modal__close");
 export const addCardForm = addCardModal.querySelector(".modal__form");
 
 export const cardTitleInput = document.querySelector("#card-title-input");
 export const cardUrlInput = document.querySelector("#card-url-input");
-const deleteButton = document.querySelector(".card__delete-card");
-const closeButtons = document.querySelectorAll(".modal__close");
+export const deleteButton = document.querySelector(".card__delete-card");
+export const closeButtons = document.querySelectorAll(".modal__close");
 
 export const previewImageModal = document.querySelector("#preview-image-modal");
-const previewImageCloseButton = previewImageModal.querySelector(
+export const previewImageCloseButton = previewImageModal.querySelector(
   ".modal__close_preview"
 );
 export const modalImage = previewImageModal.querySelector(
   ".modal__image_preview"
 );
-const modalTitle = previewImageModal.querySelector(".modal__title_preview");
+export const modalTitle = previewImageModal.querySelector(
+  ".modal__title_preview"
+);
 
-const modals = document.querySelectorAll(".modal");
+export const modals = document.querySelectorAll(".modal");
 
-const profileEditForm = profileEditModal.querySelector(".modal__form");
+export const profileEditForm = profileEditModal.querySelector(".modal__form");
 
-const cardListEL = document.querySelector(".cards__list");
+export const cardListEL = document.querySelector(".cards__list");
+
+export function handleEscape(evt) {
+  const key = evt.key;
+  if (key === "Escape") {
+    const openedModal = document.querySelector(".modal_opened");
+    closePopup(openedModal);
+  }
+}
+
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+    if (evt.target.classList.contains("modal_opened")) {
+      closePopup(modal);
+    }
+    if (evt.target.classList.contains("modal__close")) {
+      closePopup(modal);
+    }
+  });
+});
 
 export const config = {
   formSelector: ".modal__form",
