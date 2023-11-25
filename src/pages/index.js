@@ -34,6 +34,12 @@ import {
   cardListEL,
   modal,
   forEach,
+  addCardModal,
+  openedModal,
+  modalTitle,
+  popup,
+  popupWithForm,
+  popupWithImage,
 } from "../utils/constants.js";
 
 const addCardFormValidator = new FormValidator(addCardForm, config);
