@@ -9,38 +9,23 @@ import "./index.css";
 import {
   initialCards,
   profileEditModal,
-  cardListEl,
-  profileAddModal,
-  profileEditFormElement,
-  profileAddFormElement,
+  addCardModal,
+  addNewCardButton,
+  cardListEL,
+  config,
+  profileEditForm,
+  handleEscape,
   profileEditButton,
-  profileAddButton,
-  profileAddCloseButton,
   profileTitle,
   profileDescription,
   profileTitleInput,
   profileDescriptionInput,
-  profileEditSubmitButton,
-  cardTitleInput,
-  cardUrlInput,
-  previewImageModal,
-  previewImageCloseModal,
   modalImage,
-  modalText,
-  config,
-  addCardForm,
-  profileEditForm,
-  addNewCardButton,
-  cardListEL,
-  modal,
-  forEach,
-  addCardModal,
-  openedModal,
   modalTitle,
-  popup,
-  popupWithForm,
-  popupWithImage,
+  previewImageModal,
 } from "../utils/constants.js";
+
+const addCardForm = addCardModal.querySelector(".modal__form");
 
 const addCardFormValidator = new FormValidator(addCardForm, config);
 addCardFormValidator.enableValidation();
@@ -92,7 +77,7 @@ function handleAddCardFormSubmit(evt) {
 addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 
 function createCard(cardData) {
-  const card = new Card(cardData, "#card-template", (name, link) => {
+  const card = new Card(cardData, "#card-template", () => {
     modalImage.src = cardData.link;
     modalImage.alt = cardData.name;
     modalTitle.textContent = cardData.name;
@@ -105,7 +90,5 @@ initialCards.forEach((cardData) => {
   const card = createCard(cardData);
   cardListEL.prepend(card);
 });
-
-//combining close button and overlay listeners together
 
 profileEditModalFormValidator.enableValidation();

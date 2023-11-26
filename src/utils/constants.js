@@ -79,6 +79,11 @@ export function handleEscape(evt) {
   }
 }
 
+export function closePopup(popup) {
+  document.removeEventListener("keydown", handleEscape);
+  popup.classList.remove("modal_opened");
+}
+
 modals.forEach((modal) => {
   modal.addEventListener("mousedown", (evt) => {
     if (evt.target.classList.contains("modal_opened")) {
