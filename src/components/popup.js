@@ -1,3 +1,5 @@
+// Popup.js
+
 export default class Popup {
   constructor({ popupSelector }) {
     this._popupElement = document.querySelector(popupSelector);
@@ -5,12 +7,12 @@ export default class Popup {
 
   open() {
     this._popupElement.classList.add("modal_opened");
-    document.addEventListener("keydown", this._handleEscapeClose);
+    document.addEventListener("keydown", this._handleEscapeClose.bind(this));
   }
 
   close() {
     this._popupElement.classList.remove("modal_opened");
-    document.removeEventListener("keydown", this._handleEscapeClose);
+    document.removeEventListener("keydown", this._handleEscapeClose.bind(this));
   }
 
   _handleEscapeClose(evt) {
