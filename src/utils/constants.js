@@ -107,5 +107,5 @@ export const config = {
 };
 
 function handleProfileEditFormSubmit(formData) {
-  // Handle the profile edit form submission here
+  // Handle the profile edit form submission right here
 }
