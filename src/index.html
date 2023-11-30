@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Alex Perez" />
     <meta name="keywords" content="html, css, java" />
     <title>Around the U.S.</title>
-</head>
-<body class="page">
+  </head>
+  <body class="page">
     <div class="page__content">
-        <header class="header page__section">
-            <img
-                class="header__image"
-                src="<%=require('./images/logo.svg')%>"
-                alt="Around the U.S"
-            />
-        </header>
+      <header class="header page__section">
+        <img
+          class="header__image"
+          src="<%=require('./images/logo.svg')%>"
+          alt="Around the U.S"
+        />
+      </header>
 
-        <main class="content">
-            <section class="profile page__section">
-                <img
-                    src="<%=require('./images/jacques-cousteau.jpg')%>"
-                    alt="Avatar"
-                    class="profile__image"
-                />
-                <div class="profile__info">
-                    <h1 class="profile__title" id="profile-title">Jacques Cousteau</h1>
-                    <button
-                        type="button"
-                        class="profile__edit-button"
-                        id="profile-edit-button"
-                    ></button>
-                    <p class="profile__description" id="profile-description">Explorer</p>
-                </div>
-                <button type="button" class="profile__add-button"></button>
-            </section>
-            <section class="cards page__section">
-                <ul class="cards__list"></ul>
-            </section>
-        </main>
+      <main class="content">
+        <section class="profile page__section">
+          <img
+            src="<%=require('./images/jacques-cousteau.jpg')%>"
+            alt="Avatar"
+            class="profile__image"
+          />
+          <div class="profile__info">
+            <h1 class="profile__title" id="profile-title">Jacques Cousteau</h1>
+            <button
+              type="button"
+              class="profile__edit-button"
+              id="profile-edit-button"
+            ></button>
+            <p class="profile__description" id="profile-description">
+              Explorer
+            </p>
+          </div>
+          <button type="button" class="profile__add-button"></button>
+        </section>
+        <section class="cards page__section">
+          <ul class="cards__list"></ul>
+        </section>
+      </main>
 
-        <footer class="footer page__section">
-            <p class="footer__copyright">©2023 Around the U.S.</p>
-        </footer>
+      <footer class="footer page__section">
+        <p class="footer__copyright">©2023 Around the U.S.</p>
+      </footer>
     </div>
-    </div>
+
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button class="modal__close" type="button"></button>
