@@ -1,3 +1,6 @@
+import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithImage from "../components/PopupWithImage.js"; // Added import statement
+
 export const initialCards = [
   {
     name: "Yosemite Valley",
@@ -25,15 +28,14 @@ export const initialCards = [
   },
 ];
 
-const cardData = {
-  name: "Yosemite Valley",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-};
-
 export const profileEditButton = document.querySelector("#profile-edit-button");
-export const profileEditModal = document.querySelector("#profile-edit-modal");
-export const profileEditCloseButton =
-  profileEditModal.querySelector(".modal__close");
+
+export const profileEditModal = new PopupWithForm(
+  "#profile-edit-modal",
+  handleProfileEditFormSubmit
+);
+
+export const profileEditCloseButton = profileEditModal.getCloseButton();
 export const profileTitle = document.querySelector(".profile__title");
 export const profileDescription = document.querySelector(
   ".profile__description"
@@ -67,7 +69,7 @@ export const modalTitle = previewImageModal.querySelector(
 
 export const modals = document.querySelectorAll(".modal");
 
-export const profileEditForm = profileEditModal.querySelector(".modal__form");
+export const profileEditForm = profileEditModal.getForm();
 
 export const cardListEL = document.querySelector(".cards__list");
 
@@ -103,3 +105,7 @@ export const config = {
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
 };
+
+function handleProfileEditFormSubmit(formData) {
+  // Handle the profile edit form submission here
+}

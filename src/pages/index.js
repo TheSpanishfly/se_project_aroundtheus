@@ -3,6 +3,7 @@ import FormValidator from "../components/FormValidator.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
+import PopupWithImage from "../components/PopupWithImage.js"; // Added import statement
 import "./index.css";
 import {
   initialCards,
@@ -14,8 +15,6 @@ import {
   profileEditForm,
   handleEscape,
   profileEditButton,
-  profileTitle,
-  profileDescription,
   profileTitleInput,
   profileDescriptionInput,
   modalImage,
@@ -54,7 +53,7 @@ profileEditForm.addEventListener("submit", (e) => {
 
 addNewCardButton.addEventListener("click", () => {
   addCardFormValidator.toggleButtonState();
-  addCardModal.open();
+  addCardPopup.open();
 });
 
 function handleAddCardFormSubmit(formData) {
@@ -73,10 +72,7 @@ addCardPopup.setEventListeners();
 
 function createCard(cardData) {
   const card = new Card(cardData, "#card-template", () => {
-    modalImage.src = cardData.link;
-    modalImage.alt = cardData.name;
-    modalTitle.textContent = cardData.name;
-    previewImageModal.open();
+    popupWithImage.open(cardData.name, cardData.link); // Updated this line
   });
   return card.getView();
 }
@@ -87,3 +83,7 @@ initialCards.forEach((cardData) => {
 });
 
 profileEditModalFormValidator.enableValidation();
+
+// Instantiating PopupWithImage
+const popupWithImage = new PopupWithImage("#preview-image-modal");
+popupWithImage.setEventListeners();

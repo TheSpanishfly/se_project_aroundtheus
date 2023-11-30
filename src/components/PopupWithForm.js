@@ -1,5 +1,3 @@
-// PopupWithForm.js
-
 import Popup from "./Popup.js";
 
 export default class PopupWithForm extends Popup {
@@ -7,6 +5,7 @@ export default class PopupWithForm extends Popup {
     super({ popupSelector });
     this._popupForm = this._popupElement.querySelector(".modal__form");
     this._handleFormSubmit = handleFormSubmit;
+    this._closeButton = this._popupElement.querySelector(".modal__close");
   }
 
   close() {
@@ -26,6 +25,17 @@ export default class PopupWithForm extends Popup {
       evt.preventDefault();
       this._handleFormSubmit(this._getInputValues());
     });
+    this._closeButton.addEventListener("click", () => {
+      this.close();
+    });
     super.setEventListeners();
+  }
+
+  getCloseButton() {
+    return this._closeButton;
+  }
+
+  getForm() {
+    return this._popupForm;
   }
 }
