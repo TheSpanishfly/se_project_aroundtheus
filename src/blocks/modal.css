@@ -96,12 +96,14 @@
   line-height: normal;
   background-color: #000;
   border-radius: 2px;
+  cursor: pointer;
 }
 .modal__button_disabled {
   background-color: #f6f6f6;
   color: #000;
   opacity: 0.2;
   border: 1px solid #000;
+  cursor: default;
 }
 .modal__close_preview {
   background-image: url(../images/Close-Icon.svg);
