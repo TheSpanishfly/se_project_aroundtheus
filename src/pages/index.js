@@ -3,7 +3,7 @@ import FormValidator from "../components/FormValidator.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
-import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithImage from "../components/PopupWithImage.js"; // Added import statement
 import "./index.css";
 import {
   initialCards,
@@ -13,9 +13,13 @@ import {
   cardListEL,
   config,
   profileEditForm,
+  handleEscape,
   profileEditButton,
   profileTitleInput,
   profileDescriptionInput,
+  modalImage,
+  modalTitle,
+  previewImageModal,
 } from "../utils/constants.js";
 
 const addCardForm = addCardModal.querySelector(".modal__form");
@@ -32,27 +36,23 @@ const profileEditModalFormValidator = new FormValidator(
 
 const userInfo = new UserInfo("#profile-title", "#profile-description");
 
+const profileEditFormPopup = new PopupWithForm(
+  "#profile-edit-modal",
+  handleProfileEditFormSubmit
+);
+profileEditFormPopup.setEventListeners();
+
 profileEditButton.addEventListener("click", () => {
   const { name, job } = userInfo.getUserInfo();
   profileTitleInput.value = name;
   profileDescriptionInput.value = job;
-  profileEditModal.open();
+  profileEditFormPopup.open();
 });
 
-profileEditForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const name = profileTitleInput.value;
-  const job = profileDescriptionInput.value;
-  userInfo.setUserInfo(name, job);
-  profileEditModal.close();
-});
-
-// Instantiate addCardPopup here
-const addCardPopup = new PopupWithForm(
-  "#add-card-modal",
-  handleAddCardFormSubmit
-);
-addCardPopup.setEventListeners();
+function handleProfileEditFormSubmit(formData) {
+  userInfo.setUserInfo(formData.title, formData.description);
+  profileEditFormPopup.close();
+}
 
 addNewCardButton.addEventListener("click", () => {
   addCardFormValidator.toggleButtonState();
@@ -62,12 +62,20 @@ addNewCardButton.addEventListener("click", () => {
 function handleAddCardFormSubmit(formData) {
   const card = createCard(formData);
   cardListEL.prepend(card);
+  addCardForm.reset();
   addCardPopup.close();
+  addCardFormValidator.toggleButtonState();
 }
+
+const addCardPopup = new PopupWithForm(
+  "#add-card-modal",
+  handleAddCardFormSubmit
+);
+addCardPopup.setEventListeners();
 
 function createCard(cardData) {
   const card = new Card(cardData, "#card-template", () => {
-    popupWithImage.open(cardData.name, cardData.link);
+    popupWithImage.open(cardData.name, cardData.link); // Updated this line
   });
   return card.getView();
 }

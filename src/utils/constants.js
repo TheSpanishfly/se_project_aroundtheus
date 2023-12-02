@@ -1,5 +1,4 @@
 import PopupWithForm from "../components/PopupWithForm.js";
-import PopupWithImage from "../components/PopupWithImage.js"; // Added import statement
 
 export const initialCards = [
   {
@@ -72,30 +71,6 @@ export const modals = document.querySelectorAll(".modal");
 export const profileEditForm = profileEditModal.getForm();
 
 export const cardListEL = document.querySelector(".cards__list");
-
-export function handleEscape(evt) {
-  const key = evt.key;
-  if (key === "Escape") {
-    const openedModal = document.querySelector(".modal_opened");
-    closePopup(openedModal);
-  }
-}
-
-export function closePopup(popup) {
-  document.removeEventListener("keydown", handleEscape);
-  popup.classList.remove("modal_opened");
-}
-
-modals.forEach((modal) => {
-  modal.addEventListener("mousedown", (evt) => {
-    if (evt.target.classList.contains("modal_opened")) {
-      closePopup(modal);
-    }
-    if (evt.target.classList.contains("modal__close")) {
-      closePopup(modal);
-    }
-  });
-});
 
 export const config = {
   formSelector: ".modal__form",
