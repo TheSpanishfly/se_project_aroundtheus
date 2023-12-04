@@ -60,7 +60,7 @@ addNewCardButton.addEventListener("click", () => {
 });
 
 function handleAddCardFormSubmit(formData) {
-  const card = createCard(formData);
+  const card = createCard({ name: formData.title, link: formData.url });
   cardListEL.prepend(card);
   addCardForm.reset();
   addCardPopup.close();
