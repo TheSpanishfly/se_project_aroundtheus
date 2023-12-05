@@ -1,5 +1,10 @@
 import PopupWithForm from "../components/PopupWithForm.js";
 
+export const profileEditModal = new PopupWithForm(
+  "#profile-edit-modal",
+  handleProfileEditFormSubmit
+);
+
 export const initialCards = [
   {
     name: "Yosemite Valley",
@@ -28,11 +33,6 @@ export const initialCards = [
 ];
 
 export const profileEditButton = document.querySelector("#profile-edit-button");
-
-export const profileEditModal = new PopupWithForm(
-  "#profile-edit-modal",
-  handleProfileEditFormSubmit
-);
 
 export const profileEditCloseButton = profileEditModal.getCloseButton();
 export const profileTitle = document.querySelector(".profile__title");
