@@ -67,7 +67,10 @@ function createCard(cardData) {
 const cardSection = new Section(
   {
     items: initialCards,
-    renderer: (cardData) => createCard(cardData),
+    renderer: (cardData) => {
+      const cardEl = createCard(cardData);
+      cardSection.addItem(cardEl);
+    },
   },
   ".cards__list"
 );
