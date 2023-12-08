@@ -8,7 +8,7 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import {
   initialCards,
   addCardModal,
-  ProfileEditModal,
+  profileEditModal,
   cardListEL,
   config,
   profileTitleInput,
@@ -20,7 +20,7 @@ const addCardForm = addCardModal.querySelector(".modal__form");
 const addCardFormValidator = new FormValidator(addCardForm, config);
 addCardFormValidator.enableValidation();
 
-const editProfileForm = ProfileEditModal.querySelector(".modal__form");
+const editProfileForm = profileEditModal.querySelector(".modal__form");
 const profileEditModalFormValidator = new FormValidator(
   editProfileForm,
   config

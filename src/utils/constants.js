@@ -25,7 +25,7 @@ export const initialCards = [
   },
 ];
 
-export const ProfileEditModal = document.querySelector("#profile-edit-modal");
+export const profileEditModal = document.querySelector("#profile-edit-modal");
 export const profileEditButton = document.querySelector("#profile-edit-button");
 export const profileTitleInput = document.querySelector("#profile-title-input");
 export const profileDescriptionInput = document.querySelector(
@@ -43,11 +43,4 @@ export const config = {
   inactiveButtonClass: "modal__button_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
-};
-
-export const createProfileEditForm = () => {
-  return new PopupWithForm(
-    "#profile-edit-modal",
-    () => {} // add your submit handler here
-  ).getForm();
 };
